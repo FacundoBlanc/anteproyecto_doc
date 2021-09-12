@@ -1,5 +1,5 @@
 \section*{\underline{TÍTULO DEL PROYECTO}}
-Diseño, desarrollo e implementación de un sistema de gestión, seguimiento y obtención de indicadores relacionados a programas de formación.
+Diseño, desarrollo e implementación de un sistema de gestión, seguimiento y obtención de indicadores relacionados a programas de formación.\\
 
 
 \section*{\underline{OBJETIVO DEL PROYECTO}}
@@ -25,7 +25,7 @@ El Trabajo Final de Grado se realizará en el marco del proyecto UNDEX 775/2019 
 	\item Estandarización, limpieza y centralización del almacenamiento de la información de los cursos evitando pérdidas de la misma.
 	\item Automatización de la carga de datos correspondiente a los cursos, lo que conlleva a un menor esfuerzo por parte de las personas encargadas de realizar estas tareas.
 	\item Seguimientos de las alumnas participantes y de los programas.
-	\item Facilidad de acceso a la información.
+	\item Facilidad de acceso a la información.\\
 \end{itemize}
 
 
@@ -99,7 +99,13 @@ El equipo estará formado por los siguientes roles:
 \end{figure}
 
 \section*{\underline{PROGRAMACIÓN DE ACTIVIDADES}}
--------- COMPLETAR DIAGRAMA DE GANT ------
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{imagenes/gantt.png} 
+	\caption{Diagrama de Gantt}
+\end{figure}
+
 
 \section*{\underline{PROGRAMACIÓN DE RECURSOS}}
 Se utilizarán los siguientes recursos y plataformas de desarrollo:
@@ -114,10 +120,10 @@ Se utilizarán los siguientes recursos y plataformas de desarrollo:
 	\item Postman free edition.
 \end{itemize}
 
-El producto se desplegará sobre un servidor provisto por el Departamento de Computación e Informática, para publicarlo bajo un subdominio de su página web.
+El producto se desplegará sobre un servidor provisto por el Departamento de Computación e Informática, para publicarlo bajo un subdominio de su página web.\\
 
 \section*{\underline{FACILIDADES REQUERIDAS AL IUA}}
-Se hará uso de los equipos e infraestructura disponible en el Departamento de Computación e Informática.
+Se hará uso de los equipos e infraestructura disponible en el Departamento de Computación e Informática.\\
 
 
 \section*{\underline{PRESUPUESTO}}
@@ -135,12 +141,12 @@ Valor de un servidor físico con características necesarias:
 
 	\item Estimación de costos de desarrollo:
 		\begin{itemize}
-			\item Se estima que el costo de desarrollo para realizar este proyecto es de 3600 USD, siendo el valor en hora de trabajo de 20 USD, con un total de 180 horas estimadas.
+			\item Se estima que el costo de desarrollo para realizar este proyecto es de 3600 USD, siendo el valor en hora de trabajo de 20 USD, con un total de 180 horas estimadas.\\
 		\end{itemize}
 \end{enumerate}
 
 \section*{\underline{FUENTES DE FINANCIAMIENTO}}
-No corresponde por tratarse de un trabajo final para obtener el título de grado de la carrera.
+No corresponde por tratarse de un trabajo final para obtener el título de grado de la carrera.\\
 
 \section*{\underline{RIESGOS ESPERADOS Y SUPUESTOS ASUMIDOS}}
 Los riesos esperados son:
@@ -164,27 +170,53 @@ Los tesistas harán uso de equipos e infraestructura disponible en el Departamen
 \end{itemize}
 
 \section*{\underline{PROYECCIÓN DE COSTOS DE OPERACIÓN Y MANTENIMIENTO}}
-- COMPLETAR ----
+El sistema se desplegará en un servidor Físico por lo cual los costos de operación y mantenimiento serán los relacionados a los gastos de Luz e Internet que serán a cargo del IUA. \\
 
+La forma en la que será desplegado el sistema en este servidor será la siguiente:
+\begin{itemize}
+	\item Los microservicios que componen el sistema estarán desplegados con la ayuda de la tecnología de Docker y alguna herramienta para la gestión de estos contenedores.
+	\item En cuanto a la base de datos, se utilizará una instalación nativa de MySQL en el servidor físico.
+	\item En el caso de necesitar de algún otro servicio que no sea de persistencia de datos se utilizará también la estrategia de despliegue en un contenedor de Docker.
+	\item En el caso de necesitar algún otro servicio de persistencia de datos se procederá a utilizar la misma estrategia que con la base de datos MySQL, es decir, se instalará de manera nativa en el servidor.\\
+\end{itemize}
+
+Como alternativa se evaluó la opción de desplegar el sistema utilizando algún proveedor en la nube. En este caso se optó por Amazon Web Services por ser uno de los más conocidos y confiables. La sugerencia de despliegue utilizando Amazon Web Services es la siguiente: \\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{imagenes/aws_archi.png} 
+	\caption{Diagrama de despliegue de microservicios en Amazon Web Services.}
+\end{figure}
+
+Esto es una típica implementación de una arquitectura de microservicios utilizando Amazon Web Services pero el costo mensual para poder funcionar es de alrededor 1100 dólares. Este es un costo aproximado ya que para tener una idea más acertada se necesitaría conocer información acerca del uso del sistema como podría ser el volumen de datos que van a ser guardados en la base de datos o la cantidad de tráfico web a la que el sistema será sometido.\\
 
 \section*{\underline{ANÁLISIS DE VIABILIDAD COMERCIAL}}
-No corresponde dado que se enmarca en un proyecto UNDEX.
+No corresponde dado que se enmarca en un proyecto UNDEX.\\
 
 
 \section*{\underline{ANÁLISIS FINANCIERO}}
-No corresponde dado que se trata de un trabajo final de carrera.
+No corresponde dado que se trata de un trabajo final de carrera.\\
 %\footnote{https://www.pagina12.com.ar/325647-software-el-pais-buscara-cuadruplicar-los-puestos-de-trabajo}
 
 \section*{\underline{ESTUDIO AMBIENTAL}}
-COMPLETAR
+La elección de un servidor local o en la nube trae impacto ambiental negativo.\\
+
+Mantener toda la información en la nube da la posibildad de no tener que preocuparse por perder y/o procesar información ya que los proveedores de servicios en la nube permiten hacerlo desde cualquier lugar pero esto significa tener la información en datacenters compuestos de miles de servidores que utilizan una cantidad de energía inmensa. Para mantener estos edificios se necesitan kilómetros de fibra óptica e infraestructura que requieren energía en el camino. En el centro, los datos se almacenan varias veces en discos duros, y la actividad constante de todos esos discos genera mucho calor, lo que requiere aires acondicionados que consumen mucha energía para proteger el equipo del sobrecalentamiento.\\
+Además, los proveedores de servicios en la nube generan toneladas de desechos electrónicos, aunque algunos de estos proveedores, como Microsoft, están planeando proyectos de reciclaje y redistribuición de los servidores y componentes degradados o en desuso.
+\\
+
+Mantener un servidor local, permite controlar de manera más eficiente el uso de la energía y de los componentes, pero no se tiene la ventaja que provee la nube en el procesamiento y almacenamiento de los datos.\\
+
+
+
 
 \section*{\underline{ESTUDIO SOCIAL}}
-La industria tecnológica y de desarrollo de software ha tenido un gran crecimiento en los últimos años. La Argentina no es ajena a este proceso: Actualmente la industria del software posee alrededor de 115.000 empleos y se proyecta para el año 2030 unos 500.000 en total o incluso más \textbf{\cite{EmpleosUltAnios}}.\\
+La industria tecnológica y de desarrollo de software ha tenido un gran crecimiento en los últimos años. La Argentina no es ajena a este proceso: Actualmente la industria del software posee alrededor de 115.000 empleos y se proyecta para el año 2030 unos 500.000 en total o incluso más \textbf{\cite{EmpleosUltAnios}}(Matias K, 2021).\\
 
 En una industria en pleno crecimiento, la inserción de la mujer sigue presentando desafíos:
 \begin{itemize}
-	\item Aunque en los últimos 15 años se duplicó la participación de mujeres en la industria de IT, todavía la brecha frente a la participación de hombres en esta misma industria es muy grande (70\% hombres, 30\% mujeres). (colocar referencia)
-	\item Solo el 30\% de los estudiantes de carreras de Ciencia, Tecnología, Ingeniería y Matemática (CTIM) que se registran en universidades públicas y privadas son mujeres. \textbf{\cite{MujeresCtim}}\\
+	\item Aunque en los últimos 15 años se duplicó la participación de mujeres en la industria de IT, todavía la brecha frente a la participación de hombres en esta misma industria es muy grande (70\% hombres, 30\% mujeres).  \textbf{\cite{DuplMujeres}}(Mujeres en la industria del software, 2020)
+	\item Solo el 30\% de los estudiantes de carreras de Ciencia, Tecnología, Ingeniería y Matemática (CTIM) que se registran en universidades públicas y privadas son mujeres. \textbf{\cite{MujeresCtim}}(Ana inés \& Cecilia, 2019)\\
 \end{itemize}
 
 En adición, la industria de Software es una de las pocas que ha mantenido su crecimiento durante los últimos años y posee uno de los mejores salarios en Argentina.\\
